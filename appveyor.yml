@@ -21,6 +21,7 @@ install:
   - ps: Install-Product node 8 x64
   - npm install
   - npm install increase-memory-limit -g 
+  - npm run build-prod
   - yarn
 
 build_script:
