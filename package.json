@@ -15,8 +15,8 @@
     "sqlite3"
   ],
   "scripts": {
-  	"fix-memory-limit": "cross-env LIMIT=8096 increase-memory-limit",
-    "build": "set NODE_ENV=production && node --max_old_space_size=8192 .electron-vue/build.js && electron-builder",
+  	"fix-memory-limit": "cross-env LIMIT=16384 increase-memory-limit",
+    "build": "set NODE_ENV=production && node --max_old_space_size=16384 .electron-vue/build.js && electron-builder",
     "build:ci": "node .electron-vue/build.js && electron-builder --publish always",
     "build:dir": "node .electron-vue/build.js && electron-builder --dir",
     "build:clean": "cross-env BUILD_TARGET=clean node .electron-vue/build.js",
