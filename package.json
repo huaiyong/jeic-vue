@@ -15,7 +15,8 @@
     "sqlite3"
   ],
   "scripts": {
-    "build": "node --max_old_space_size=8192 .electron-vue/build.js && electron-builder",
+  	"fix-memory-limit": "cross-env LIMIT=8096 increase-memory-limit",
+    "build": "set NODE_ENV=production && node --max_old_space_size=8192 .electron-vue/build.js && electron-builder",
     "build:ci": "node .electron-vue/build.js && electron-builder --publish always",
     "build:dir": "node .electron-vue/build.js && electron-builder --dir",
     "build:clean": "cross-env BUILD_TARGET=clean node .electron-vue/build.js",
@@ -84,6 +85,7 @@
     "crypto": "^1.0.1",
     "exec": "^0.2.1",
     "ffi": "^2.3.0",
+    "increase-memory-limit": "^1.0.6",
     "node-uuid": "^1.4.8",
     "screenshot-desktop": "^1.9.0",
     "socket.io": "^2.2.0",
@@ -125,6 +127,7 @@
     "file-loader": "^0.11.2",
     "fs-extra": "^6.0.1",
     "html-webpack-plugin": "^2.30.1",
+    "increase-memory-limit": "^1.0.6",
     "jquery": "^3.4.1",
     "js-md5": "^0.7.3",
     "less": "^3.7.1",
