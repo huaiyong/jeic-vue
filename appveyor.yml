@@ -19,7 +19,7 @@ init:
 
 install:
   - ps: Install-Product node 8 x64
-  - npm install
+  - npm install npm@latest -g
   - npm install increase-memory-limit -g 
   - yarn
 
